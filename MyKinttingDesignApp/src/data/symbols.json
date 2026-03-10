@@ -1,0 +1,86 @@
+[
+  {
+    "id": "k-knit",
+    "char": "k",
+    "label": "平针 / knit",
+    "category": "basic",
+    "fontFamily": "StitchMasteryDash"
+  },
+  {
+    "id": "p-purl",
+    "char": "p",
+    "label": "反针 / purl",
+    "category": "basic",
+    "fontFamily": "StitchMasteryDash"
+  },
+  {
+    "id": "yo",
+    "char": "o",
+    "label": "加一针 / yarn over",
+    "category": "increases",
+    "fontFamily": "StitchMasteryDash"
+  },
+  {
+    "id": "k2tog",
+    "char": "/",
+    "label": "并一针 / k2tog",
+    "category": "decreases",
+    "fontFamily": "StitchMasteryDashCable"
+  },
+  {
+    "id": "ssk",
+    "char": "\\",
+    "label": "左并针 / ssk",
+    "category": "decreases",
+    "fontFamily": "StitchMasteryDashCable"
+  },
+  {
+    "id": "c2l",
+    "char": "!",
+    "label": "2x2 左交叉",
+    "category": "cable-2",
+    "fontFamily": "StitchMasteryDashCable"
+  },
+  {
+    "id": "c2r",
+    "char": "@",
+    "label": "2x2 右交叉",
+    "category": "cable-2",
+    "fontFamily": "StitchMasteryDashCable"
+  },
+  {
+    "id": "c3l",
+    "char": "#",
+    "label": "3 针左交叉占 2 针",
+    "category": "cable-3",
+    "fontFamily": "StitchMasteryDashCable"
+  },
+  {
+    "id": "c3r",
+    "char": "$",
+    "label": "3 针右交叉占 2 针",
+    "category": "cable-3",
+    "fontFamily": "StitchMasteryDashCable"
+  },
+  {
+    "id": "purl-dot",
+    "char": "~",
+    "label": "反针符号 (点)",
+    "category": "basic",
+    "fontFamily": "StitchMasteryDot"
+  },
+  {
+    "id": "marker",
+    "char": ".",
+    "label": "标记点",
+    "category": "markers",
+    "fontFamily": "StitchMasteryDot"
+  },
+  {
+    "id": "blank",
+    "char": " ",
+    "label": "空白 / 保留位",
+    "category": "utility",
+    "fontFamily": "StitchMasteryDash"
+  }
+]

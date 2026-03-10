@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "StitchMasteryDash";
+  src: url("/fonts/StitchMasteryDash.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "StitchMasteryDashCable";
+  src: url("/fonts/StitchMasteryDashCable.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "StitchMasteryDashCableEH";
+  src: url("/fonts/StitchMasteryDashCableEH.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "StitchMasteryDot";
+  src: url("/fonts/StitchMasteryDot.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "StitchMasteryDotCable";
+  src: url("/fonts/StitchMasteryDotCable.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "StitchMasteryDotCableEH";
+  src: url("/fonts/StitchMasteryDotCableEH.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  font-family: "StitchMasteryDash", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: #0f172a;
+  background-color: #f7f8fb;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f7f8fb;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 24px 48px;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.app-subtitle {
+  margin: 4px 0 0;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.info-banner {
+  padding: 10px 12px;
+  background: #eef2ff;
+  border: 1px solid #e0e7ff;
+  color: #312e81;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.app-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  gap: 20px;
+  align-items: start;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  padding: 16px;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.meta {
+  display: flex;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  font-size: 12px;
+  color: #374151;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #10b981;
+  border: 1px solid #059669;
+}
+
+.section-title {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 12px 0;
+}

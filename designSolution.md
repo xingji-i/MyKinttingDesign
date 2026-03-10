@@ -68,6 +68,22 @@
     5.  实现基本的单元格合并、背景色修改。
 -   **预计耗时：** 1-2个月(如果是全职/兼职开发)。
 
+**阶段一补充：初始实现应侧重的方面(按优先级)**
+
+1.  **网格编辑体验(像Excel一样顺手)**
+    -   支持点击选格、拖拽选区、键盘输入字符、方向键移动。
+    -   行高=列宽，保证正方形格子；默认字号和行高可同步调整。
+2.  **字体加载与渲染稳定性**
+    -   字体文件加载失败时要有兜底字体和提示。
+    -   不追求复杂排版，先确保单格内符号居中且可读。
+3.  **符号选择效率**
+    -   先实现“可点击符号面板 + 写入当前单元格”。
+    -   键盘映射作为第二步，再做快捷输入。
+4.  **基础样式与合并单元格**
+    -   背景色、边框、单元格合并是Excel体验的关键。
+5.  **最小文件保存/加载**
+    -   先支持本地JSON导入/导出，确保数据结构稳定。
+
 **阶段二：文件管理 + AI解析/生成 (核心AI功能)**
 
 -   **目标：** 让AI能够看懂简单的图纸,并能根据描述生成简单图案。
@@ -107,6 +123,14 @@
 
 **对于MVP,建议采用基于DOM的方式**,开发速度快,用户体验也最接近你设想的“Excel感觉”。
 
+#### 2.1 MVP推荐技术栈(更具体)
+-   **前端框架：** React + Vite + TypeScript
+-   **状态管理：** Zustand(轻量、学习成本低)
+-   **样式方案：** CSS Modules 或 Tailwind(二选一)
+-   **导出图片：** html2canvas(后期再接PDF)
+-   **字体加载：** CSS `@font-face` + `FontFace` API检测
+-   **图标与UI：** 暂不引入重量级UI库，先用原生组件
+
 #### 3. 后端与AI服务
 -   **后端语言：** Python(因为AI生态最好)。
 -   **Web框架：** FastAPI(高性能,易用)。
@@ -118,6 +142,104 @@
 
 #### 4. 字体处理
 -   将StitchMastery字体文件(大概率是`.ttf`或`.otf`)放在项目中,通过CSS的`@font-face`引入,供整个应用使用。
+
+##### 字体集成实现细节(可直接按此落地)
+1.  **字体文件放置路径**
+        -   建议放在`public/fonts/`，比如：`public/fonts/StitchMasteryCable.ttf`。
+2.  **CSS注册字体**
+        -   在全局样式中加入：
+            ```css
+            @font-face {
+                font-family: "StitchMasteryCable";
+                src: url("/fonts/StitchMasteryCable.ttf") format("truetype");
+                font-display: swap;
+            }
+            ```
+3.  **字体加载检测(避免空白格)**
+        -   用`document.fonts.load("16px StitchMasteryCable")`确保字体可用。
+4.  **单元格样式建议**
+        -   `line-height`等于单元格高度，`text-align: center`，`vertical-align: middle`。
+        -   避免小数像素，行高与列宽使用整数。
+
+##### 符号提取实现细节(从PDF对照表落地)
+**目标：** 建立“字符 -> 符号定义”的可维护数据源，驱动面板与输入。
+
+1.  **建立符号配置文件**
+        -   在项目内创建`symbols.json`，记录：
+            ```json
+            {
+                "id": "cable-2x2-left",
+                "char": "!",
+                "label": "2x2左交叉",
+                "category": "cable-2",
+                "fontFamily": "StitchMasteryCable"
+            }
+            ```
+2.  **人工录入第一批核心符号**
+        -   从PDF中挑选最常用的20-40个符号，先保证MVP可用。
+3.  **后续自动化(可选)**
+        -   若PDF是文本，可用脚本解析；若是图片，可用OCR辅助提取。
+        -   但MVP阶段建议人工录入，准确率更高。
+4.  **符号面板渲染**
+        -   面板根据`category`分组；点击后把`char`写入当前单元格。
+5.  **键盘映射(第二步做)**
+        -   将`symbols.json`里的`char`和快捷键映射为单独表，便于管理。
+
+### 五、 MVP文件结构(可直接按此创建)
+```
+my-knit-editor/
+    public/
+        fonts/
+            StitchMasteryCable.ttf
+            StitchMasteryBasic.ttf
+    src/
+        app/
+            App.tsx
+            routes.tsx
+        components/
+            Grid/
+                Grid.tsx
+                GridCell.tsx
+                grid.css
+            SymbolPanel/
+                SymbolPanel.tsx
+                symbol-panel.css
+            Toolbar/
+                Toolbar.tsx
+        data/
+            symbols.json
+        state/
+            gridStore.ts
+            selectionStore.ts
+        utils/
+            gridMath.ts
+            exportImage.ts
+            fontLoader.ts
+        styles/
+            globals.css
+    index.html
+    package.json
+    vite.config.ts
+    tsconfig.json
+```
+
+### 六、 MVP数据结构(建议落地)
+```json
+{
+    "rows": 60,
+    "cols": 60,
+    "cellSize": 24,
+    "grid": [
+        [{"char": " ", "bg": "#FFFFFF", "font": "StitchMasteryCable", "merge": null}]
+    ]
+}
+```
+
+### 七、 MVP功能验收清单(用于判断“可以进入下一步”)
+1.  网格可编辑、选区可移动、输入字符可显示。
+2.  字体加载稳定，符号显示与PDF对照表一致。
+3.  符号面板可点击写入；背景色可修改。
+4.  画布可保存为JSON并重新加载。
 
 ### 五、 如何设计该软件的AI Agent？
 

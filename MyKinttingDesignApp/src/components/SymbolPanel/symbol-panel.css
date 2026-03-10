@@ -1,0 +1,56 @@
+.symbol-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.symbol-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.symbol-group-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.symbol-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(98px, 1fr));
+  gap: 10px;
+}
+
+.symbol-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 8px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.symbol-button:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.symbol-char {
+  font-size: 22px;
+  line-height: 1;
+  color: #111827;
+}
+
+.symbol-label {
+  font-size: 12px;
+  color: #4b5563;
+  text-align: center;
+}
