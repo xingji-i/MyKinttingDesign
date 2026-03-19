@@ -1,15 +1,48 @@
 .grid-wrapper {
   overflow: auto;
-  max-height: 70vh;
+  max-height: 82vh;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   background: #fdfdfd;
+  padding: 8px;
+}
+
+.grid-viewport {
+  width: max-content;
 }
 
 .grid-table {
   border-collapse: collapse;
   width: max-content;
   background: #fff;
+}
+
+.grid-table thead th {
+  position: sticky;
+  top: 0;
+  background: #f8fafc;
+  z-index: 1;
+}
+
+.grid-table tbody th.row-head {
+  position: sticky;
+  left: 0;
+  background: #f8fafc;
+  z-index: 1;
+}
+
+.corner-cell {
+  border: 1px solid #e5e7eb;
+}
+
+.col-head,
+.row-head {
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+  text-align: center;
+  border: 1px solid #e5e7eb;
 }
 
 .grid-table td {

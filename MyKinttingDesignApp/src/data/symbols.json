@@ -4,83 +4,135 @@
     "char": "k",
     "label": "平针 / knit",
     "category": "basic",
-    "fontFamily": "StitchMasteryDash"
+    "fontFamily": "StitchMasteryDash",
+    "mode": "knit"
   },
   {
     "id": "p-purl",
     "char": "p",
     "label": "反针 / purl",
     "category": "basic",
-    "fontFamily": "StitchMasteryDash"
+    "fontFamily": "StitchMasteryDash",
+    "mode": "knit"
   },
   {
     "id": "yo",
     "char": "o",
     "label": "加一针 / yarn over",
     "category": "increases",
-    "fontFamily": "StitchMasteryDash"
+    "fontFamily": "StitchMasteryDash",
+    "mode": "knit"
   },
   {
     "id": "k2tog",
     "char": "/",
     "label": "并一针 / k2tog",
     "category": "decreases",
-    "fontFamily": "StitchMasteryDashCable"
+    "fontFamily": "StitchMasteryDashCable",
+    "mode": "knit"
   },
   {
     "id": "ssk",
     "char": "\\",
     "label": "左并针 / ssk",
     "category": "decreases",
-    "fontFamily": "StitchMasteryDashCable"
+    "fontFamily": "StitchMasteryDashCable",
+    "mode": "knit"
   },
   {
     "id": "c2l",
     "char": "!",
     "label": "2x2 左交叉",
     "category": "cable-2",
-    "fontFamily": "StitchMasteryDashCable"
+    "fontFamily": "StitchMasteryDashCable",
+    "mode": "knit"
   },
   {
     "id": "c2r",
     "char": "@",
     "label": "2x2 右交叉",
     "category": "cable-2",
-    "fontFamily": "StitchMasteryDashCable"
+    "fontFamily": "StitchMasteryDashCable",
+    "mode": "knit"
   },
   {
     "id": "c3l",
     "char": "#",
     "label": "3 针左交叉占 2 针",
     "category": "cable-3",
-    "fontFamily": "StitchMasteryDashCable"
+    "fontFamily": "StitchMasteryDashCable",
+    "mode": "knit"
   },
   {
     "id": "c3r",
     "char": "$",
     "label": "3 针右交叉占 2 针",
     "category": "cable-3",
-    "fontFamily": "StitchMasteryDashCable"
+    "fontFamily": "StitchMasteryDashCable",
+    "mode": "knit"
   },
   {
     "id": "purl-dot",
     "char": "~",
     "label": "反针符号 (点)",
     "category": "basic",
-    "fontFamily": "StitchMasteryDot"
+    "fontFamily": "StitchMasteryDot",
+    "mode": "knit"
   },
   {
     "id": "marker",
     "char": ".",
     "label": "标记点",
     "category": "markers",
-    "fontFamily": "StitchMasteryDot"
+    "fontFamily": "StitchMasteryDot",
+    "mode": "knit"
   },
   {
     "id": "blank",
     "char": " ",
     "label": "空白 / 保留位",
     "category": "utility",
-    "fontFamily": "StitchMasteryDash"
+    "fontFamily": "StitchMasteryDash",
+    "mode": "both"
+  },
+  {
+    "id": "cr-chain",
+    "char": "o",
+    "label": "锁针 / chain",
+    "category": "crochet-basic",
+    "fontFamily": "StitchMasteryDash",
+    "mode": "crochet"
+  },
+  {
+    "id": "cr-single",
+    "char": "x",
+    "label": "短针 / single crochet",
+    "category": "crochet-basic",
+    "fontFamily": "StitchMasteryDash",
+    "mode": "crochet"
+  },
+  {
+    "id": "cr-halfdouble",
+    "char": "t",
+    "label": "半长针 / half double",
+    "category": "crochet-basic",
+    "fontFamily": "StitchMasteryDash",
+    "mode": "crochet"
+  },
+  {
+    "id": "cr-double",
+    "char": "T",
+    "label": "长针 / double crochet",
+    "category": "crochet-basic",
+    "fontFamily": "StitchMasteryDash",
+    "mode": "crochet"
+  },
+  {
+    "id": "cr-increase",
+    "char": "+",
+    "label": "加针",
+    "category": "crochet-modifier",
+    "fontFamily": "StitchMasteryDash",
+    "mode": "crochet"
   }
 ]

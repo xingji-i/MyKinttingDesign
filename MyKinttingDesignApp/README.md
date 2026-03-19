@@ -14,9 +14,11 @@ npm run dev
 浏览器访问 http://localhost:5173/。
 
 ## 当前能力（MVP）
-- 12×12 可编辑网格，单元格选中后键入或从符号面板点击填入符号。
+- 大号可滚动画布（默认 40×40），支持行列编号、缩放滑杆（0.6–1.6）。
+- 单元格可键入、支持多行粘贴；符号面板点击写入并带上对应 fontFamily。
+- 支持“棒针 / 钩针”模式切换（基于 symbols.json 过滤）。
 - StitchMastery 字体从 public/fonts 加载，@font-face 已注册并在 App 中检测。
-- 符号面板按 category 分组，点击写入当前格子并带上对应 fontFamily。
+- 首次进入出现引导弹窗（localStorage 控制）。
 
 ## 目录结构
 ```
